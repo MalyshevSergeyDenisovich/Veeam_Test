@@ -4,13 +4,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfProp {
+public class ConfPropReader {
+    private static final String PATH = "src/test/resources/config.properties";
+
     private static FileInputStream fileInputStream;
     private static Properties PROPERTIES;
 
+
     static {
         try {
-            fileInputStream = new FileInputStream("src/test/resources/config.properties");
+            fileInputStream = new FileInputStream(PATH);
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {
